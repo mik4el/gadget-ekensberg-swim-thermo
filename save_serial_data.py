@@ -56,7 +56,7 @@ except:
 data_poster = DataPoster(token, base_url)
 
 data_string = "57279,17.50,20.00,4.04"
-post_data_from_string(data)
+data_poster.post_data_from_string(data)
 
 '''
 Main thread
