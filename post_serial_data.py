@@ -5,10 +5,10 @@ import requests
 from datetime import datetime
 import threading
 
+
 class DataAuther:
 
 	def __init__(self, username, password, base_url):
-		gadget_id = "1" 
 		self.login_url = base_url + '/api-token-auth/'
 		self.username = username
 		self.password = password
@@ -28,8 +28,8 @@ class DataPosterWorker(threading.Thread):
 
 	def __init__(self, token, base_url, data_string):
 		threading.Thread.__init__(self)
-		gadget_id = "1" 
-		self.post_url = base_url+'/api/v1/gadgets/'+gadget_id+'/data/'
+		gadget_slug = "ekensberg-swim-thermo" 
+		self.post_url = base_url+'/api/v1/gadgets/'+gadget_slug+'/data/'
 		self.headers = {'Authorization': 'Bearer '+ token}
 		self.data_string = data_string
 
