@@ -1,5 +1,5 @@
 import unittest
-from data_poster import DataPosterWorker
+from post_serial_data import DataPosterWorker
 
 
 class TestDataPosterWorker(unittest.TestCase):
@@ -34,4 +34,3 @@ class TestDataPosterWorker(unittest.TestCase):
 		
 		data_string = "57273,15.50,10.00"  # to few args
 		data = self.assertRaises(Exception, self.data_poster.data_from_string, data_string)
-		

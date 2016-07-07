@@ -55,7 +55,7 @@ class DataPosterWorker(threading.Thread):
 			data_list = [f(x) for x in data_string.split(',')]
 			last = data_list[3]
 		except:
-			raise Exception('Not valid data "' + data_string+'"')
+			raise Exception('Not valid data "' + data_string + '"')
 
 		transmission_id = data_list[0]
 		temp_deep = data_list[1]
