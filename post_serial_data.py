@@ -2,7 +2,7 @@ import os
 import serial
 from time import strftime
 import requests
-from datetime import datetime
+from datetime import datetime, timedelta
 import threading
 
 
@@ -38,10 +38,11 @@ class DataPosterWorker(threading.Thread):
 			self.post_data_from_string(self.data_string)
 
 	def post_data(self, data):
+		now = datetime.now() - timedelta(hours=2)  # convert to Z timezone
 		try:
 			payload = {
 				'data':data,
-				'timestamp': datetime.now().isoformat()
+				'timestamp': now.isoformat()
 			}
 			r = requests.post(self.post_url, json=payload, headers=self.headers)
 		except:
@@ -62,12 +63,12 @@ class DataPosterWorker(threading.Thread):
 			raise Exception('Not valid data "' + data_string+'"')
 
 		transmission_id = data_list[0]
-		temp_deep = data_list[1]
+		temp_air = data_list[1]
 		temp_surface = data_list[2]
 		battery_v = data_list[3]
 		data = {
 			'transmission_id': transmission_id, 
-			'temp_deep': temp_deep,
+			'temp_air': temp_air,
 			'temp_surface': temp_surface,
 			'battery_v': battery_v
 		}

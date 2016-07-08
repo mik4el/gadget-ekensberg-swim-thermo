@@ -17,11 +17,13 @@ On pi:
 1. Install deps on pi
 1. Run it in e.g. byobu
 
+## Testing
+1. Run `python -m unittest tests`
+
 ## Dependencies
 requests, pyserial, py2.7
 
 ## Todo 
-1. Tests
 1. Dockerize raspi
 1. Dockerize script
 1. Serious logging
