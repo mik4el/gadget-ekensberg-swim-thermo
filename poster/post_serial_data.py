@@ -1,7 +1,7 @@
 import os
 import serial
 import requests
-from datetime import datetime, timedelta
+from datetime import datetime
 import threading
 import queue
 
@@ -34,10 +34,9 @@ class DataPosterWorker(threading.Thread):
             self.post_data_from_string(self.data_string)
 
     def post_data(self, data):
-        now = datetime.now() - timedelta(hours=2)  # convert to Z timezone
         payload = {
             'data': data,
-            'timestamp': now.isoformat()
+            'timestamp': datetime.now().isoformat()
         }
         try:
             r = requests.post(self.post_url, json=payload, headers=self.headers)
