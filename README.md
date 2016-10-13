@@ -13,9 +13,11 @@ Everything for building and getting the gadget Ekensberg Swim Thermometer to run
 
 ## Install without docker
 On local:
+
 1. `scp post_serial_data.py pi@10.0.0.4:.`
 
 On pi:
+
 1. `curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash`
 1. `sudo nano ~/.bashrc` according to https://github.com/yyuu/pyenv-installer
 1. `pyenv install 3.5.1`
