@@ -1,5 +1,6 @@
 import unittest
-from post_serial_data import DataPosterWorker
+
+from poster.post_serial_data import DataPosterWorker
 
 
 class TestDataPosterWorker(unittest.TestCase):

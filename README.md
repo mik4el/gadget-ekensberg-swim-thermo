@@ -10,7 +10,7 @@ On pi:
 1. `sudo nano ~/.bashrc` according to https://github.com/yyuu/pyenv-installer
 1. `pyenv install 3.5.1`
 1. `pip install pyserial`
-1. `pip install requests
+1. `pip install requests`
 
 ## Run
 1. Copy script to pi

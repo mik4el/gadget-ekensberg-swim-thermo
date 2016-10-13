@@ -1,0 +1,7 @@
+poster:
+  restart: always
+  build: ./poster
+  env_file: .env
+  command: python post_serial_data.py
+  privileged: true
+

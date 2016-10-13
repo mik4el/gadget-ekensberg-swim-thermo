@@ -1,6 +1,5 @@
 import os
 import serial
-from time import strftime
 import requests
 from datetime import datetime, timedelta
 import threading
