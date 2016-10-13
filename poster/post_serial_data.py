@@ -85,6 +85,8 @@ class DataPosterWorker(threading.Thread):
 
 
 if __name__ == '__main__':
+    print("Started...")	
+ 
     username = os.environ.get('GADGET_DATA_POSTER_USERNAME', None)
     password = os.environ.get('GADGET_DATA_POSTER_PASSWORD', None)
     base_url = os.environ.get('GADGET_DATA_POSTER_URL', '')
@@ -104,6 +106,8 @@ if __name__ == '__main__':
             except:
                 print("No more serial ports to try. Exiting.")
                 exit()
+
+    print("Serial connected...")
 
     try:
         while True:
@@ -131,4 +135,4 @@ if __name__ == '__main__':
                     print(log_message, file=logfile)
                 print(log_message)
     except KeyboardInterrupt:
-        print("\ndone")
+        print("Done")
