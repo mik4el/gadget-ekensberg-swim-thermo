@@ -1,6 +1,16 @@
-poster:
-  restart: always
-  build: ./poster
-  env_file: .env
-  privileged: true
-  command: python post_serial_data.py
+version: '2'
+
+services:
+  poster:
+    restart: always
+    build: ./poster
+    env_file: .env
+    privileged: true
+    command: python post_serial_data.py
+    volumes:
+      - ./poster:/usr/src/app/    
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1M"
+        max-file: "1"
