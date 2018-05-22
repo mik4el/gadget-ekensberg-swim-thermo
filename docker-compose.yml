@@ -10,7 +10,4 @@ services:
     volumes:
       - ./poster:/usr/src/app/    
     logging:
-      driver: "json-file"
-      options:
-        max-size: "1M"
-        max-file: "1"
+      driver: "none"
